@@ -1,0 +1,10 @@
+djangoadmin_username: shripal
+djangoadmin_password: Bombay1970*
+postgres database name: myproject
+postgres_user: shripal
+postgres__password: bombay
+
+
+pgadmin4 user: shripalp@gmail.com
+password:  Bombay1970*
+

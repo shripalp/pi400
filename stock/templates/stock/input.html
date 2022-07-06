@@ -1,0 +1,15 @@
+{% extends "stock/layout.html" %}
+
+    
+{% block body%}
+    
+<h2>{{msg}}</h2>
+    <form action = "{% url 'stock:input' %}" method = "post" >
+        {% csrf_token %}
+        {{form}}
+        
+        <input type="submit">
+    </form>
+    {{stock}}
+    {{tickers}}
+{% endblock %}
