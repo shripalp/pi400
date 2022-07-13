@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-70zzl&k!oltbcjsm2i6d1p2!nccughfq1^gzt)h00%9#1)67^!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.0.0.175','70.65.106.245']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -80,16 +81,15 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'myproject',
-        'USER': 'shripal',
-        'PASSWORD': 'bombay',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
     }
 }
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -128,3 +128,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#import django_on_heroku
+#django_on_heroku.settings(locals())
+
+
