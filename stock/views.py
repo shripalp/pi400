@@ -24,6 +24,8 @@ def index(request):
     
     return render(request, 'stock/index.html', {
         "stock":request.session["stock"],
+        "price":stockdata["price"],
+        "change":stockdata["percent_change"],
         "rating":stockdata["rating"]
     })
 
